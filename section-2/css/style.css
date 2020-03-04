@@ -55,6 +55,7 @@ body {
     left: 50%;
 
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary {
@@ -63,6 +64,7 @@ body {
 
     /* sometime when anima do will have a little bit move down so it will fix */
     backface-visibility: hidden;
+    margin-bottom: 60px;
 }
 
 .header-primary-main {
@@ -120,5 +122,50 @@ body {
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: white;
+    color: #777;
+}
+
+.btn-animated {
+    -webkit-animation:moveInBottom .5s ease-out .75s;
+    animation:moveInBottom .5s ease-out .75s;
+    -webkit-animation-fill-mode:backwards;
+    animation-fill-mode:backwards;
+}
+
+@keyframes moveInBottom {
+    0% { 
+        opacity:0;
+        -webkit-transform:translateY(3rem);
+        transform:translateY(3rem)
+    }
+    100% { 
+        opacity:1;
+        -webkit-transform:translate(0);
+        transform:translate(0)
     }
 }
